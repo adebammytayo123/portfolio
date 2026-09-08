@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds */
+  --background: #fafafa;
+  --background-secondary: #f4f4f5;
+  --background-elevated: #ffffff;
+  --header: rgba(250, 250, 250, 0.85);
+
+  /* Foreground / Text */
+  --foreground: #18181b;
+  --foreground-secondary: #52525b;
+  --foreground-muted: #71717a;
+
+  /* Borders */
+  --border: #e4e4e7;
+
+  /* Brand - Purple */
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --primary-light: #7c3aed;
+
+  /* Brand with transparency */
+  --primary-subtle: rgba(124, 58, 237, 0.08);
+  --primary-glow: rgba(124, 58, 237, 0.15);
+
+  /* Semantic Colors */
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+}
+
+.dark {
+  /* Backgrounds */
+  --background: #09090b;
+  --background-secondary: #111113;
+  --background-elevated: #18181b;
+  --header: rgba(15, 15, 18, 0.85);
+
+  /* Foreground / Text */
+  --foreground: #fafafa;
+  --foreground-secondary: #a1a1aa;
+  --foreground-muted: #71717a;
+
+  /* Borders */
+  --border: #27272a;
+
+  /* Brand - Purple */
+  --primary: #7c3aed;
+  --primary-hover: #8b5cf6;
+  --primary-light: #a78bfa;
+
+  /* Brand with transparency */
+  --primary-subtle: rgba(124, 58, 237, 0.08);
+  --primary-glow: rgba(124, 58, 237, 0.15);
+
+  /* Semantic Colors */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
 }
 
 @theme inline {
+  /* Backgrounds */
   --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-elevated: var(--background-elevated);
+  --color-header: var(--header);
+
+  /* Text */
   --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-foreground-muted: var(--foreground-muted);
+
+  /* Borders */
+  --color-border: var(--border);
+
+  /* Purple */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  --color-primary-subtle: var(--primary-subtle);
+  --color-primary-glow: var(--primary-glow);
+
+  /* Semantic */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
