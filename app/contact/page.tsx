@@ -16,7 +16,6 @@ type FormErrors = {
 };
 
 const ContactPage = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [errors, setErrors] = useState<FormErrors>({});
 
@@ -195,7 +194,7 @@ const ContactPage = () => {
 
                   <form
                     className="space-y-6"
-                    onSubmit={async (event: FormEvent<HTMLFormElement>) => {
+                    onSubmit={(event: FormEvent<HTMLFormElement>) => {
                       event.preventDefault();
 
                       const form = event.currentTarget;
@@ -210,35 +209,29 @@ const ContactPage = () => {
                         return;
                       }
 
-                      setIsSubmitting(true);
+                      const name = String(formData.get("name") || "").trim();
+                      const email = String(formData.get("email") || "").trim();
+                      const subject = String(
+                        formData.get("subject") || "",
+                      ).trim();
+                      const message = String(
+                        formData.get("message") || "",
+                      ).trim();
 
-                      try {
-                        const response = await fetch("/api/contact", {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify({
-                            name: formData.get("name"),
-                            email: formData.get("email"),
-                            subject: formData.get("subject"),
-                            message: formData.get("message"),
-                          }),
-                        });
+                      const body = `Hello Adetayo,
 
-                        if (!response.ok) {
-                          throw new Error("Failed to send message");
-                        }
+                      ${message}
 
-                        form.reset();
-                        setErrors({});
-                        setStatus("success");
-                      } catch (error) {
-                        console.error(error);
-                        setStatus("error");
-                      } finally {
-                        setIsSubmitting(false);
-                      }
+                      Warm Regards,
+                      ${name}
+                      ${email}
+                      `;
+
+                      const mailtoUrl = `mailto:adetayoadetokun@gmail.com?subject=${encodeURIComponent(
+                        subject,
+                      )}&body=${encodeURIComponent(body)}`;
+
+                      window.location.href = mailtoUrl;
                     }}
                   >
                     <div className="grid gap-6 sm:grid-cols-2">
@@ -380,17 +373,13 @@ const ContactPage = () => {
                     </div>
                     <button
                       type="submit"
-                      disabled={isSubmitting}
-                      className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-primary-hover hover:shadow-lg hover:shadow-primary/20"
                     >
-                      {isSubmitting ? "Sending..." : "Send message"}
-
-                      {!isSubmitting && (
-                        <ArrowUpRight
-                          size={17}
-                          className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      )}
+                      Send message
+                      <ArrowUpRight
+                        size={17}
+                        className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      />
                     </button>
                     {status === "success" && (
                       <p className="text-center text-sm text-success">
