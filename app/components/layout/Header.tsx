@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import ChangingText from "../ChangeText";
 import ThemeToggle from "../ThemeToggle";
+import { House } from "lucide-react";
 
 const navigation = [
   {
@@ -27,23 +27,23 @@ const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-header backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Brand */}
+        {/* Brand */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-semibold tracking-tight"
+          className="flex items-center gap-3 text-xl font-semibold tracking-tight"
         >
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-primary text-foreground transition-colors hover:bg-primary/10">
+            <House size={18} strokeWidth={2} />
+          </span>
+
           <span className="text-foreground">Adetayo</span>
-
-          <span className="text-foreground-muted">·</span>
-
-          <ChangingText />
         </Link>
 
         {/* Navigation */}
         <nav className="flex items-center gap-6">
           {navigation.map((item) => {
             const isActive =
-              pathname === item.href ||
-              pathname.startsWith(`${item.href}/`);
+              pathname === item.href || pathname.startsWith(`${item.href}/`);
 
             return (
               <Link
