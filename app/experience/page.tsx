@@ -83,27 +83,6 @@ const experiences = [
   },
 ];
 
-const achievements = [
-  {
-    value: "60%",
-    label: "Reduction in loan processing time",
-    description:
-      "Improved financial workflows through better frontend experiences and process optimization.",
-  },
-  {
-    value: "5",
-    label: "Engineers led",
-    description:
-      "Provided technical leadership, mentorship, planning, and delivery support as Engineering Manager.",
-  },
-  {
-    value: "5+",
-    label: "Years of experience",
-    description:
-      "Building production applications across enterprise SaaS, cybersecurity, fintech, and digital products.",
-  },
-];
-
 const technicalFocus = [
   "Frontend Architecture",
   "React & Next.js",
@@ -249,48 +228,6 @@ const ExperiencePage = () => {
                 </article>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact */}
-      <section className="border-y border-border bg-background-secondary">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-28">
-          <div className="max-w-2xl">
-            <p className="font-mono text-xs uppercase tracking-wider text-primary-light">
-              Impact
-            </p>
-
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              The work behind the numbers.
-            </h2>
-
-            <p className="mt-5 text-base leading-7 text-foreground-secondary">
-              I care about more than shipping features. The goal is to build
-              systems that make products easier to use, teams easier to scale,
-              and engineering work easier to maintain.
-            </p>
-          </div>
-
-          <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
-            {achievements.map((achievement) => (
-              <div
-                key={achievement.label}
-                className="bg-background-secondary p-8 lg:p-10"
-              >
-                <p className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                  {achievement.value}
-                </p>
-
-                <p className="mt-4 text-sm font-medium text-foreground">
-                  {achievement.label}
-                </p>
-
-                <p className="mt-3 text-sm leading-6 text-foreground-secondary">
-                  {achievement.description}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
