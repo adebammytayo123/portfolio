@@ -12,13 +12,42 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Adetayo Adetokun",
+  url: "https://yourdomain.com",
+  jobTitle: "Frontend Engineer",
+  description:
+    "Frontend Engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
+  knowsAbout: [
+    "Frontend Development",
+    "Software Engineering",
+    "TypeScript",
+    "JavaScript",
+    "React",
+    "Next.js",
+    "Redux",
+    "React Query",
+    "Web Development",
+    "Frontend Architecture",
+    "Engineering Management",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/yourprofile",
+    "https://github.com/yourusername",
+  ],
+};
+
 export const metadata: Metadata = {
   title: {
     default: "Adetayo Adetokun — Frontend Engineer",
     template: "%s — Adetayo Adetokun",
   },
+
   description:
     "Portfolio of Adetayo Adetokun, a frontend engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
+
   keywords: [
     "Adetayo Adetokun",
     "Frontend Engineer",
@@ -29,13 +58,17 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Web Developer",
   ],
+
   authors: [
     {
       name: "Adetayo Adetokun",
     },
   ],
+
   creator: "Adetayo Adetokun",
+
   metadataBase: new URL("https://yourdomain.com"),
+
   openGraph: {
     title: "Adetayo Adetokun — Frontend Engineer",
     description:
@@ -44,12 +77,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "Adetayo Adetokun",
   },
+
   twitter: {
     card: "summary_large_image",
     title: "Adetayo Adetokun — Frontend Engineer",
     description:
       "Frontend engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -62,6 +97,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
+      </head>
+
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
