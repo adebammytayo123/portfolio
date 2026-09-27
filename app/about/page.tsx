@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Code2, Layers3, Sparkles, Target } from "lucide-react";
 import Layout from "../components/layout/Layout";
@@ -93,7 +92,7 @@ const AboutPage = () => {
               </RevealItem>
             </RevealGroup>
 
-            {/* Photo */}
+            {/* Developer Visual */}
             <Reveal
               delay={0.2}
               y={30}
@@ -103,17 +102,65 @@ const AboutPage = () => {
               <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-primary/10 blur-3xl" />
 
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-border bg-background-secondary">
-                <Image
-                  src="/Adetayo-potrait.jpeg"
-                  alt="Adetayo"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 400px"
-                  className="object-cover"
-                />
+                {/* Grid */}
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
 
-                {/* Very subtle atmosphere */}
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(124,58,237,0.10),transparent_50%)]" />
+                {/* Atmosphere */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,rgba(124,58,237,0.16),transparent_55%)]" />
+
+                <div className="relative flex h-full flex-col justify-between p-8">
+                  {/* Top */}
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs tracking-wider text-foreground-muted">
+                      SOFTWARE ENGINEER
+                    </span>
+
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500 shadow-[0_0_12px_rgba(34,197,94,0.7)]" />
+                  </div>
+
+                  {/* Center */}
+                  <div>
+                    <div className="font-mono text-sm text-foreground-muted">
+                      {"<developer>"}
+                    </div>
+
+                    <h2 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                      Adetayo
+                      <br />
+                      <span className="text-foreground-muted">
+                        Adetokun
+                      </span>
+                    </h2>
+
+                    <p className="mt-6 max-w-sm text-sm leading-6 text-foreground-secondary">
+                      Building scalable digital products with modern frontend
+                      technologies and thoughtful engineering.
+                    </p>
+
+                    {/* Skills */}
+                    <div className="mt-8 flex flex-wrap gap-2">
+                      {["TypeScript", "React", "Next.js"].map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full border border-border bg-background/60 px-3 py-1.5 font-mono text-xs text-foreground-muted backdrop-blur"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom */}
+                  <div className="flex items-end justify-between">
+                    <span className="font-mono text-sm text-foreground-muted">
+                      {"</developer>"}
+                    </span>
+
+                    <span className="font-mono text-xs text-foreground-muted">
+                      2026
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* Small label */}
