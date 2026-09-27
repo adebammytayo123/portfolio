@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Adetokun Adetayo Nimota",
+  name: "Adetokun Adetayo",
   url: "https://yourdomain.com",
   jobTitle: "Frontend Engineer",
   description:
@@ -41,15 +41,15 @@ const personSchema = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Adetokun Adetayo Nimota — Frontend Engineer",
-    template: "%s — Adetokun Adetayo Nimota",
+    default: "Adetokun Adetayo — Frontend Engineer",
+    template: "%s — Adetokun Adetayo",
   },
 
   description:
-    "Portfolio of Adetokun Adetayo Nimota, a frontend engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
+    "Portfolio of Adetokun Adetayo, a frontend engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
 
   keywords: [
-    "Adetokun Adetayo Nimota",
+    "Adetokun Adetayo",
     "Frontend Engineer",
     "Frontend Developer",
     "React Developer",
@@ -61,26 +61,26 @@ export const metadata: Metadata = {
 
   authors: [
     {
-      name: "Adetokun Adetayo Nimota",
+      name: "Adetokun Adetayo",
     },
   ],
 
-  creator: "Adetokun Adetayo Nimota",
+  creator: "Adetokun Adetayo",
 
   metadataBase: new URL("https://yourdomain.com"),
 
   openGraph: {
-    title: "Adetokun Adetayo Nimota — Frontend Engineer",
+    title: "Adetokun Adetayo — Frontend Engineer",
     description:
       "Frontend engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
     type: "website",
     locale: "en_US",
-    siteName: "Adetokun Adetayo Nimota",
+    siteName: "Adetokun Adetayo",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Adetokun Adetayo Nimota — Frontend Engineer",
+    title: "Adetokun Adetayo — Frontend Engineer",
     description:
       "Frontend engineer building scalable, high-quality digital products with React, Next.js, TypeScript, and modern frontend architecture.",
   },
